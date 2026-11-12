@@ -1,1 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff6df">
+<title>Earthside | Field Notes for Dads</title>
+<style>
+:root {
+--cream:#fff6df;
+--ink:#2d2929;
+--muted:#716964;
+--lime:#c8db16;
+--coral:#ff6b55;
+--blue:#37c7c2;
+}
+•	{ box-sizing:border-box; }
+•	html { scroll-behavior:smooth; }
+•	body {
+o	margin:0;
+o	background:var(--cream);
+o	color:var(--ink);
+o	font-family:Arial,Helvetica,sans-serif;
+o	line-height:1.7;
+•	}
+•	header,main,footer {
+o	max-width:720px;
+o	margin:auto;
+o	padding:22px;
+•	}
+•	nav {
+o	display:flex;
+o	justify-content:space-between;
+o	align-items:center;
+o	gap:12px;
+•	}
+•	.brand {
+o	font-size:18px;
+o	font-weight:900;
+o	letter-spacing:-1px;
+•	}
+•	nav a {
+o	color:var(--ink);
+o	font-size:13px;
+o	text-decoration:none;
+•	}
+•	.hero {
+o	padding:65px 0 55px;
+•	}
+•	.eyebrow {
+o	font-size:11px;
+o	font-weight:bold;
+o	letter-spacing:2px;
+o	text-transform:uppercase;
+•	}
+•	h1 {
+o	font-size:clamp(56px,13vw,100px);
+o	line-height:.95;
+o	letter-spacing:-5px;
+o	margin:20px 0;
+•	}
+•	h2 {
+o	font-size:30px;
+o	line-height:1.15;
+o	letter-spacing:-1px;
+•	}
+•	h3 { font-size:21px; }
+•	.subtitle {
+o	font-size:19px;
+o	max-width:420px;
+o	line-height:1.5;
+•	}
+•	.moon {
+o	width:78px;
+o	height:78px;
+o	margin:36px 0;
+o	border-radius:50%;
+o	background:var(--lime);
+o	border:3px solid var(--ink);
+o	position:relative;
+o	transform:rotate(-12deg);
+•	}
+•	.moon:before {
+o	content:"";
+o	position:absolute;
+o	width:54px;
+o	height:54px;
+o	border-radius:50%;
+o	background:var(--cream);
+o	left:28px;
+o	top:-12px;
+•	}
+•	.moon:after {
+o	content:"";
+o	position:absolute;
+o	width:12px;
+o	height:12px;
+o	border-radius:50%;
+o	background:var(--coral);
+o	left:13px;
+o	bottom:12px;
+•	}
+•	.button {
+o	display:inline-block;
+o	background:var(--ink);
+o	color:var(--cream);
+o	padding:13px 22px;
+o	border-radius:30px;
+o	text-decoration:none;
+o	font-weight:bold;
+o	font-size:14px;
+•	}
+•	.section {
+o	border-top:1px solid #cfc6b2;
+o	padding:38px 0;
+•	}
+•	.section-number {
+o	color:var(--muted);
+o	font-size:12px;
+o	letter-spacing:1px;
+•	}
+•	.section p { color:var(--muted); }
+•	.note-link {
+o	display:block;
+o	padding:17px 0;
+o	color:var(--ink);
+o	text-decoration:none;
+o	border-bottom:1px solid #ded5c1;
+•	}
+•	.note-link span {
+o	display:block;
+o	font-size:12px;
+o	color:var(--muted);
+•	}
+•	.note-link strong {
+o	font-size:19px;
+•	}
+•	.locked { opacity:.48; }
+•	.devotion {
+o	padding:35px 0 65px;
+o	border-top:2px solid var(--ink);
+•	}
+•	.devotion p {
+o	font-size:17px;
+o	line-height:1.85;
+o	margin:0 0 22px;
+•	}
+•	.devotion h2 {
+o	font-size:42px;
+o	margin:10px 0 20px;
+•	}
+•	.scripture {
+o	font-size:13px;
+o	color:var(--muted);
+o	margin-bottom:30px;
+•	}
+•	.quote {
+o	padding:18px 22px;
+o	border-left:4px solid var(--coral);
+o	margin:30px 0;
+o	font-style:italic;
+•	}
+•	.reflection {
+o	background:#f2e9d5;
+o	padding:22px;
+o	border-radius:12px;
+o	margin:35px 0;
+•	}
+•	.reflection h3 {
+o	margin-top:0;
+•	}
+•	footer {
+o	padding-bottom:45px;
+o	color:var(--muted);
+o	font-size:12px;
+•	}
+•	@media(max-width:480px) {
+o	.hero { padding-top:45px; }
+o	h1 { letter-spacing:-3px; }
+o	.devotion h2 { font-size:36px; }
+•	}
+•	</style>
+•	</head>
+<body>
+<header>
+<nav>
+<a href="#top" class="brand">EARTHSIDE.</a>
+<a href="#fieldnotes">FIELD NOTES</a>
+</nav>
+</header>
+<main id="top">
+<section class="hero">
+<div class="eyebrow">Temporary Residents Club</div>
+<h1>EARTH<br>SIDE.</h1>
+<div class="moon" aria-hidden="true"></div>
+<p class="subtitle">
+Field notes on faith, fatherhood,
+and life on Earth.
+</p>
+<p>
+To the dads who are still figuring
+out how to live here.
+</p>
+<p>
+May we become more like Jesus
+along the way.
+</p>
+<a class="button" href="#note001">
+Read Field Note 001
+</a>
+</section>
+<section id="fieldnotes" class="section">
+<div class="eyebrow">The Field Guide</div>
+<h2>30 observations.<br>One strange planet.</h2>
+<p>
+We're not from around here.
+But while we're here, there's
+some good work to do.
+</p>
+</section>
+<section class="section">
+<div class="section-number">SECTION 01 / NOTES 001–007</div>
+<h2>Strange Planet</h2>
+<p>
+Wonder, presence, curiosity,
+gratitude, and learning to pay attention.
+</p>
+<a href="#note001" class="note-link">
+<span>FIELD NOTE 001</span>
+<strong>You Are Here</strong>
+</a>
+<div class="note-link locked">
+<span>FIELD NOTES 002–007</span>
+<strong>More observations coming soon</strong>
+</div>
+</section>
+<section class="section">
+<div class="section-number">SECTION 02 / NOTES 008–015</div>
+<h2>The Other Earthlings</h2>
+<p>
+Marriage, children, friendship,
+hospitality, and learning to love people.
+</p>
+<div class="note-link locked">
+<span>FIELD NOTES 008–015</span>
+<strong>Coming soon</strong>
+</div>
+</section>
+<section class="section">
+<div class="section-number">SECTION 03 / NOTES 016–023</div>
+<h2>Equipment Malfunctions</h2>
+<p>
+Pride, patience, humility, forgiveness,
+and the uncomfortable work of growing.
+</p>
+<div class="note-link locked">
+<span>FIELD NOTES 016–023</span>
+<strong>Coming soon</strong>
+</div>
+</section>
+<section class="section">
+<div class="section-number">SECTION 04 / NOTES 024–030</div>
+<h2>Temporary Residents</h2>
+<p>
+Purpose, suffering, contentment,
+heavenly citizenship, and eternity.
+</p>
+<div class="note-link locked">
+<span>FIELD NOTES 024–030</span>
+<strong>Coming soon</strong>
+</div>
+</section>
+<article id="note001" class="devotion">
+<div class="eyebrow">Field Note 001 / Presence</div>
+<h2>You Are Here</h2>
+<div class="scripture">
+Matthew 6:34 · Ephesians 5:15–16
+</div>
+<p>I've spent a surprising amount of my life somewhere other than where I actually am.</p>
+<p>At work, I'm thinking about home.</p>
+<p>At home, I'm thinking about work.</p>
+<p>On vacation, I'm thinking about the emails waiting for me when I get back.</p>
+<p>And occasionally, while someone is talking directly to my face, I'm thinking about what I'm going to eat later.</p>
+<p>It's remarkable how many places a person can visit without moving his feet.</p>
+<p>Fatherhood has made this particularly obvious.</p>
+<p>You can be sitting on the floor with your child while mentally answering an email, replaying a conversation, or calculating how many hours remain before bedtime.</p>
+<p>Your body is there.</p>
+<p>The rest of you has wandered off.</p>
+<p>And children seem particularly uninterested in receiving only a portion of a person.</p>
+<p>They want you to look at the rock.</p>
+<p>Not glance at it.</p>
+<p>Look at it.</p>
+<p>They want you to hear the noise they can make with their mouth. They want you to watch them do something they've already done seventeen times.</p>
+<p>And somewhere in the middle of these interruptions, I've started wondering whether they're actually interruptions at all.</p>
+<h3>The Trouble with Tomorrow</h3>
+<p>Jesus said not to worry about tomorrow because tomorrow will worry about itself.</p>
+<p>I've always found that a peculiar instruction.</p>
+<p>Tomorrow seems like exactly the sort of thing I should be worrying about.</p>
+<p>There are bills to pay, responsibilities to manage, children to raise, and a lawn that apparently has no intention of stopping.</p>
+<p>But Jesus wasn't telling us to abandon responsibility.</p>
+<p>He was teaching us to trust our Father.</p>
+<p>Worry has a way of convincing us that mentally living in tomorrow is the same thing as preparing for it.</p>
+<p>It isn't.</p>
+<p>Sometimes it's simply a way of being absent from today.</p>
+<p>Paul David Tripp frequently writes about how our circumstances reveal what rules our hearts. I think fatherhood gives us an unusually clear view.</p>
+<p>When I can't put my phone down, what am I afraid of missing?</p>
+<p>When I'm irritated by an interruption, what did I believe was more important?</p>
+<p>When I can't enjoy an ordinary afternoon, what am I waiting for before I allow myself to be content?</p>
+<p>These aren't always comfortable questions.</p>
+<p>But they're useful ones.</p>
+<h3>A Very Short Assignment</h3>
+<p>We're only here for a little while.</p>
+<p>And while we're here, God has given us actual people to love.</p>
+<p>Not imaginary people who exist in our future plans.</p>
+<p>The ones currently standing in the kitchen asking for a snack.</p>
+<p>The ones who want to tell us a story that takes an unreasonable amount of time to reach its conclusion.</p>
+<p>The ones who would rather have ten minutes of our undivided attention than an hour of us being vaguely nearby.</p>
+<p>Being present isn't simply a parenting technique.</p>
+<p>It's part of learning to love our neighbors.</p>
+<p>And some of our nearest neighbors sleep down the hall.</p>
+<p>Perhaps becoming more like Jesus begins, in part, with learning to pay attention to the people He's placed directly in front of us.</p>
+<p>We are here.</p>
+<p>For now.</p>
+<p>And that's a pretty good place to start.</p>
+<div class="reflection">
+<h3>Field Question</h3>
+<p>Where does your mind tend to wander when you're with the people you love?</p>
+<h3>Earthside Practice</h3>
+<p>Spend fifteen minutes with your child today without your phone, an agenda, or the need to accomplish anything.</p>
+<p>Let them decide what matters. If it's a rock, investigate the rock.</p>
+<h3>A Prayer</h3>
+<p>Father, forgive me for being absent from the life You've given me. Teach me to trust You with tomorrow and to love the people You've placed in front of me today. Help me become a man who is truly here. Amen.</p>
+</div>
+<a class="button" href="#fieldnotes">Back to Field Guide</a>
+</article>
+</main>
+<footer>
+EARTHSIDE · Field Notes on Faith, Fatherhood, and Life on Earth
+</footer>
+</body>
+</html>
 
