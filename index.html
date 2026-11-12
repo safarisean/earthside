@@ -4,271 +4,360 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#35204f">
+<meta name="theme-color" content="#100d25">
 <title>Earthside | Field Notes for Dads</title>
 
 <style>
 :root {
-  --purple: #35204f;
-  --plum: #563477;
-  --teal: #20c5bb;
-  --cream: #fff9ee;
-  --lavender: #e8dcfa;
-  --ink: #292238;
-  --coral: #ff957e;
+  --space:#100d25;
+  --deep:#17112e;
+  --panel:#211a3d;
+  --panel2:#2c2349;
+  --teal:#83ded8;
+  --teal-dark:#286f87;
+  --lavender:#c7b5e5;
+  --cream:#fff7ec;
+  --muted:#bcb3ce;
+  --coral:#e7a0a6;
+  --line:#42385e;
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing:border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior:smooth;
 }
 
 body {
-  margin: 0;
-  background: var(--cream);
-  color: var(--ink);
-  font-family: Arial, sans-serif;
-  line-height: 1.7;
+  margin:0;
+  background:var(--space);
+  color:var(--cream);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.7;
 }
 
 a {
-  color: inherit;
+  color:inherit;
 }
 
 .container {
-  max-width: 720px;
-  margin: auto;
-  padding: 0 22px;
+  width:100%;
+  max-width:720px;
+  margin:auto;
+  padding:0 22px;
 }
 
 header {
-  background: var(--purple);
-  color: white;
-  padding: 18px 0;
+  position:relative;
+  z-index:2;
+  background:var(--space);
+  border-bottom:1px solid var(--line);
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-top:19px;
+  padding-bottom:19px;
 }
 
 .logo {
-  font-weight: 900;
-  font-size: 20px;
-  text-decoration: none;
+  font-weight:900;
+  font-size:20px;
+  letter-spacing:-1px;
+  text-decoration:none;
 }
 
-nav a {
-  text-decoration: none;
-  font-size: 13px;
+nav a:last-child {
+  color:var(--teal);
+  text-decoration:none;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:1px;
 }
 
 .hero {
-  background: var(--purple);
-  color: white;
-  padding: 65px 0 80px;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(
+      ellipse at 50% 35%,
+      #28204d 0%,
+      #17112e 45%,
+      #100d25 85%
+    );
+}
+
+.starfield {
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    radial-gradient(1px 1px at 12% 14%,white 98%,transparent),
+    radial-gradient(1px 1px at 75% 9%,white 98%,transparent),
+    radial-gradient(2px 2px at 84% 36%,#a7e5e2 98%,transparent),
+    radial-gradient(1px 1px at 28% 42%,white 98%,transparent),
+    radial-gradient(1px 1px at 60% 64%,white 98%,transparent),
+    radial-gradient(2px 2px at 18% 79%,#d2b7ef 98%,transparent),
+    radial-gradient(1px 1px at 92% 83%,white 98%,transparent);
+  background-size:310px 290px;
+  opacity:.55;
+}
+
+.hero-inner {
+  position:relative;
+  z-index:1;
+  padding-top:48px;
+  padding-bottom:75px;
 }
 
 .eyebrow {
-  color: var(--teal);
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--teal);
 }
 
 h1 {
-  font-size: clamp(62px, 15vw, 110px);
-  line-height: 0.9;
-  letter-spacing: -4px;
-  margin: 25px 0;
+  font-size:clamp(64px,15vw,108px);
+  line-height:.88;
+  letter-spacing:-5px;
+  margin:22px 0 15px;
 }
 
-.hero p {
-  max-width: 420px;
+.planet-scene {
+  width:100%;
+  max-width:440px;
+  margin:10px auto 25px;
+}
+
+.planet-scene svg {
+  display:block;
+  width:100%;
+  height:auto;
 }
 
 .subtitle {
-  font-size: 20px;
-  color: var(--lavender);
+  font-size:20px;
+  line-height:1.45;
+  max-width:440px;
+  color:var(--cream);
 }
 
-.moon {
-  width: 105px;
-  height: 105px;
-  background: var(--teal);
-  border-radius: 50%;
-  position: relative;
-  margin: 35px 0;
-  transform: rotate(-15deg);
-}
-
-.moon::before {
-  content: "";
-  position: absolute;
-  width: 95px;
-  height: 95px;
-  background: var(--purple);
-  border-radius: 50%;
-  top: -17px;
-  left: 38px;
-}
-
-.moon::after {
-  content: "";
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  background: var(--coral);
-  border-radius: 50%;
-  bottom: 16px;
-  left: 18px;
+.dedication {
+  margin-top:27px;
+  max-width:440px;
+  color:var(--lavender);
+  font-size:15px;
 }
 
 .button {
-  display: inline-block;
-  background: var(--teal);
-  color: var(--purple);
-  padding: 14px 24px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-  margin-top: 20px;
+  display:inline-block;
+  padding:15px 23px;
+  margin-top:22px;
+  background:var(--teal);
+  color:var(--space);
+  border-radius:9px;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.5px;
 }
 
-.intro {
-  padding: 65px 0 35px;
+.location {
+  margin-top:48px;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  font-size:10px;
+  letter-spacing:1px;
+  color:var(--muted);
 }
 
-.intro h2 {
-  font-size: 38px;
-  line-height: 1.1;
-  letter-spacing: -1px;
+.location strong {
+  color:var(--teal);
+  text-align:right;
 }
 
-.card {
-  padding: 25px;
-  border-radius: 18px;
-  margin-bottom: 18px;
+.guide {
+  padding-top:65px;
+  padding-bottom:25px;
 }
 
-.card h2 {
-  font-size: 28px;
-  margin: 10px 0;
-  line-height: 1.2;
+.guide h2 {
+  font-size:clamp(33px,8vw,46px);
+  line-height:1.12;
+  letter-spacing:-2px;
+  margin:15px 0;
 }
 
-.card p {
-  font-size: 14px;
+.guide p {
+  color:var(--muted);
+  max-width:460px;
 }
 
-.card-one {
-  background: #d8f4ef;
+.sector {
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:26px;
+  margin:16px 0;
 }
 
-.card-two {
-  background: #e9def7;
+.sector-number {
+  color:var(--teal);
+  font-size:11px;
+  letter-spacing:1.5px;
+  font-weight:bold;
 }
 
-.card-three {
-  background: #f9d8d5;
+.sector h2 {
+  font-size:28px;
+  line-height:1.15;
+  letter-spacing:-1px;
+  margin:12px 0;
 }
 
-.card-four {
-  background: #dce5fb;
+.sector p {
+  color:var(--muted);
+  font-size:14px;
 }
 
-.card-number {
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 1px;
+.sector:nth-of-type(2) .sector-number {
+  color:var(--lavender);
+}
+
+.sector:nth-of-type(3) .sector-number {
+  color:var(--coral);
+}
+
+.sector:nth-of-type(4) .sector-number {
+  color:#e6d49e;
 }
 
 .note-link {
-  display: block;
-  background: rgba(255,255,255,0.75);
-  padding: 15px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 20px;
+  display:block;
+  background:var(--panel2);
+  border:1px solid #51476e;
+  border-radius:10px;
+  padding:15px 17px;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:bold;
+  margin-top:20px;
 }
 
 .coming {
-  opacity: 0.6;
-  font-size: 13px;
-  margin-top: 18px;
+  color:#8e85a6;
+  font-size:12px;
+  margin-top:18px;
 }
 
-.devotion {
-  padding: 75px 0;
+.reading {
+  margin-top:75px;
+  padding-top:65px;
+  padding-bottom:85px;
+  border-top:1px solid var(--line);
 }
 
-.devotion h2 {
-  font-size: 48px;
-  line-height: 1;
-  letter-spacing: -2px;
+.reading-label {
+  color:var(--teal);
+  font-size:11px;
+  letter-spacing:2px;
+  font-weight:bold;
+}
+
+.reading h2 {
+  font-size:clamp(42px,10vw,62px);
+  line-height:1;
+  letter-spacing:-3px;
+  margin:15px 0 18px;
 }
 
 .scripture {
-  color: #716964;
-  font-size: 14px;
-  margin-bottom: 35px;
+  color:var(--lavender);
+  font-size:14px;
+  margin-bottom:38px;
 }
 
 .article {
-  font-family: Georgia, serif;
+  font-family:Georgia,serif;
+  max-width:620px;
 }
 
 .article p {
-  font-size: 18px;
-  line-height: 1.85;
-  margin-bottom: 22px;
+  color:#eee8f5;
+  font-size:18px;
+  line-height:1.9;
+  margin:0 0 23px;
 }
 
 .article h3 {
-  font-family: Arial, sans-serif;
-  font-size: 25px;
-  margin-top: 45px;
+  font-family:Arial,sans-serif;
+  font-size:25px;
+  letter-spacing:-1px;
+  color:var(--teal);
+  margin:48px 0 23px;
+}
+
+.article strong {
+  color:var(--teal);
 }
 
 .reflection {
-  background: var(--lavender);
-  padding: 25px;
-  border-radius: 16px;
-  margin-top: 40px;
+  margin-top:50px;
+  padding:27px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:16px;
 }
 
 .reflection h3 {
-  color: var(--purple);
-  font-size: 15px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  color:var(--teal);
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  margin:30px 0 10px;
+}
+
+.reflection h3:first-child {
+  margin-top:0;
+}
+
+.reflection p {
+  color:var(--cream);
+  font-size:16px;
+  line-height:1.8;
 }
 
 footer {
-  background: var(--purple);
-  color: var(--lavender);
-  padding: 35px 0;
-  font-size: 13px;
+  background:#0b091b;
+  padding:40px 0;
+  color:var(--muted);
+  font-size:12px;
 }
 
-@media (max-width: 480px) {
-  h1 {
-    letter-spacing: -3px;
-  }
+footer strong {
+  color:var(--teal);
+}
 
-  .devotion h2 {
-    font-size: 40px;
+@media(max-width:480px) {
+  h1 {
+    letter-spacing:-3px;
   }
 
   .article p {
-    font-size: 17px;
+    font-size:17px;
+  }
+
+  .sector {
+    padding:23px;
   }
 }
 </style>
@@ -278,13 +367,15 @@ footer {
 
 <header>
   <nav class="container">
-    <a href="#home" class="logo">EARTHSIDE.</a>
+    <a class="logo" href="#home">EARTHSIDE.</a>
     <a href="#guide">FIELD GUIDE</a>
   </nav>
 </header>
 
 <section class="hero" id="home">
-  <div class="container">
+  <div class="starfield"></div>
+
+  <div class="container hero-inner">
 
     <div class="eyebrow">
       Temporary Residents Club
@@ -292,49 +383,123 @@ footer {
 
     <h1>EARTH<br>SIDE.</h1>
 
-    <div class="moon" aria-hidden="true"></div>
+    <div class="planet-scene">
+      <svg viewBox="0 0 360 240"
+           xmlns="http://www.w3.org/2000/svg"
+           aria-label="Glowing planet in space"
+           role="img">
+
+        <defs>
+          <radialGradient id="glow">
+            <stop offset="0%" stop-color="#327d99"
+                  stop-opacity=".5"/>
+            <stop offset="100%" stop-color="#327d99"
+                  stop-opacity="0"/>
+          </radialGradient>
+
+          <linearGradient id="world"
+                          x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#8be5df"/>
+            <stop offset="45%" stop-color="#3189a3"/>
+            <stop offset="100%" stop-color="#242060"/>
+          </linearGradient>
+        </defs>
+
+        <circle cx="180" cy="120"
+                r="110" fill="url(#glow)"/>
+
+        <circle cx="180" cy="120"
+                r="77" fill="url(#world)"/>
+
+        <path d="M130 66
+                 L158 60
+                 L169 84
+                 L151 102
+                 L162 131
+                 L139 148
+                 L114 128
+                 L108 100 Z"
+              fill="#4bc5b8" opacity=".48"/>
+
+        <path d="M203 48
+                 L232 71
+                 L221 96
+                 L243 116
+                 L217 150
+                 L198 140
+                 L190 111
+                 L169 90 Z"
+              fill="#142b62" opacity=".6"/>
+
+        <path d="M123 162 Q180 202 237 160"
+              fill="none"
+              stroke="#8de5e0"
+              stroke-width="1.5"
+              opacity=".6"/>
+
+        <circle cx="290" cy="52" r="5"
+                fill="#e6a1a6"/>
+
+        <circle cx="66" cy="190" r="3"
+                fill="#c6a7ed"/>
+
+        <circle cx="52" cy="48" r="1.5"
+                fill="white"/>
+
+        <circle cx="312" cy="182" r="1.5"
+                fill="white"/>
+
+        <circle cx="86" cy="84" r="1"
+                fill="white"/>
+
+        <circle cx="270" cy="206" r="1"
+                fill="white"/>
+
+      </svg>
+    </div>
 
     <p class="subtitle">
       Field notes on faith, fatherhood,
       and life on Earth.
     </p>
 
-    <p>
-      To the dads who are still figuring
-      out how to live here.
-    </p>
+    <div class="dedication">
+      <p>To the dads who are still figuring
+      out how to live here.</p>
 
-    <p>
-      May we become more like Jesus
-      along the way.
-    </p>
+      <p>May we become more like Jesus
+      along the way.</p>
+    </div>
 
-    <a href="#note001" class="button">
-      START READING
+    <a class="button" href="#note001">
+      READ FIELD NOTE 001
     </a>
+
+    <div class="location">
+      <span>CURRENT LOCATION</span>
+      <strong>EARTH · TEMPORARY</strong>
+    </div>
 
   </div>
 </section>
 
 <main class="container">
 
-<section class="intro" id="guide">
-  <div class="eyebrow" style="color:#087c83">
-    The Field Guide
-  </div>
+<section class="guide" id="guide">
+  <div class="eyebrow">The Field Guide</div>
 
   <h2>30 field notes.<br>One strange planet.</h2>
 
   <p>
     We're not from around here.
-    But while we're here, there's
-    some good work to do.
+    But while we're here,
+    there's some good work to do.
   </p>
 </section>
 
-<section class="card card-one">
-  <div class="card-number">
-    SECTION 01 / 001–007
+<section class="sector">
+  <div class="sector-number">
+    SECTOR 01 / NOTES 001–007
   </div>
 
   <h2>Strange Planet</h2>
@@ -344,7 +509,7 @@ footer {
     gratitude, and learning to pay attention.
   </p>
 
-  <a href="#note001" class="note-link">
+  <a class="note-link" href="#note001">
     001 — You Are Here
   </a>
 
@@ -353,9 +518,9 @@ footer {
   </div>
 </section>
 
-<section class="card card-two">
-  <div class="card-number">
-    SECTION 02 / 008–015
+<section class="sector">
+  <div class="sector-number">
+    SECTOR 02 / NOTES 008–015
   </div>
 
   <h2>The Other Earthlings</h2>
@@ -370,16 +535,17 @@ footer {
   </div>
 </section>
 
-<section class="card card-three">
-  <div class="card-number">
-    SECTION 03 / 016–023
+<section class="sector">
+  <div class="sector-number">
+    SECTOR 03 / NOTES 016–023
   </div>
 
   <h2>Equipment Malfunctions</h2>
 
   <p>
-    Pride, patience, humility, forgiveness,
-    and the uncomfortable work of growing.
+    Pride, patience, humility,
+    forgiveness, and the uncomfortable
+    work of growing.
   </p>
 
   <div class="coming">
@@ -387,9 +553,9 @@ footer {
   </div>
 </section>
 
-<section class="card card-four">
-  <div class="card-number">
-    SECTION 04 / 024–030
+<section class="sector">
+  <div class="sector-number">
+    SECTOR 04 / NOTES 024–030
   </div>
 
   <h2>Temporary Residents</h2>
@@ -404,10 +570,10 @@ footer {
   </div>
 </section>
 
-<article class="devotion" id="note001">
+<article class="reading" id="note001">
 
-  <div class="eyebrow" style="color:#087c83">
-    Field Note 001 / Presence
+  <div class="reading-label">
+    FIELD TRANSMISSION 001 / PRESENCE
   </div>
 
   <h2>You Are Here.</h2>
@@ -530,7 +696,7 @@ footer {
 
   </div>
 
-  <a href="#guide" class="button">
+  <a class="button" href="#guide">
     BACK TO FIELD GUIDE
   </a>
 
