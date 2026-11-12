@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,446 +6,545 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#35204f">
 <title>Earthside | Field Notes for Dads</title>
+
 <style>
 :root {
---purple:#35204f;
---plum:#563477;
---lavender:#e8dcfa;
---teal:#20c5bb;
---deep-teal:#087c83;
---cream:#fff9ee;
---ink:#292238;
---muted:#726b7a;
---coral:#ff957e;
+  --purple: #35204f;
+  --plum: #563477;
+  --teal: #20c5bb;
+  --cream: #fff9ee;
+  --lavender: #e8dcfa;
+  --ink: #292238;
+  --coral: #ff957e;
 }
-•	{box-sizing:border-box}
-•	html {scroll-behavior:smooth}
-•	body {
-o	margin:0;
-o	background:var(--cream);
-o	color:var(--ink);
-o	font-family:Arial,Helvetica,sans-serif;
-o	line-height:1.7;
-•	}
-•	button,a { -webkit-tap-highlight-color:transparent }
-•	a {color:inherit}
-•	.wrap {max-width:740px;margin:auto;padding:0 22px}
-•	.site-header {
-o	background:var(--purple);
-o	color:white;
-•	}
-•	nav {
-o	display:flex;
-o	align-items:center;
-o	justify-content:space-between;
-o	padding:20px 0;
-•	}
-•	.logo {
-o	font-weight:900;
-o	letter-spacing:-1px;
-o	text-decoration:none;
-o	font-size:20px;
-•	}
-•	nav a:last-child {
-o	text-decoration:none;
-o	font-size:12px;
-o	font-weight:bold;
-o	letter-spacing:1px;
-•	}
-•	.hero {
-o	background:var(--purple);
-o	color:white;
-o	overflow:hidden;
-•	}
-•	.hero-inner {padding-top:58px;padding-bottom:70px}
-•	.eyebrow {
-o	font-size:11px;
-o	font-weight:800;
-o	letter-spacing:2px;
-o	text-transform:uppercase;
-•	}
-•	.hero .eyebrow {color:var(--teal)}
-•	h1 {
-o	font-size:clamp(65px,15vw,110px);
-o	line-height:.86;
-o	letter-spacing:-5px;
-o	margin:25px 0 30px;
-o	font-weight:900;
-•	}
-•	.hero-subtitle {
-o	max-width:420px;
-o	font-size:20px;
-o	line-height:1.45;
-o	color:var(--lavender);
-•	}
-•	.moon-wrap {
-o	height:145px;
-o	display:flex;
-o	align-items:center;
-o	justify-content:center;
-o	margin:15px 0 30px;
-•	}
-•	.moon {
-o	width:116px;
-o	height:116px;
-o	border-radius:50%;
-o	background:var(--teal);
-o	position:relative;
-o	transform:rotate(-18deg);
-o	box-shadow:12px 10px 0 rgba(255,255,255,.07);
-•	}
-•	.moon:before {
-o	content:"";
-o	position:absolute;
-o	width:102px;
-o	height:102px;
-o	border-radius:50%;
-o	background:var(--purple);
-o	left:42px;
-o	top:-20px;
-•	}
-•	.moon:after {
-o	content:"";
-o	position:absolute;
-o	width:17px;
-o	height:17px;
-o	border-radius:50%;
-o	background:var(--coral);
-o	bottom:17px;
-o	left:19px;
-o	box-shadow:23px -11px 0 #b99bea;
-•	}
-•	.stars {
-o	color:var(--coral);
-o	font-size:30px;
-o	margin-left:45px;
-•	}
-•	.hero-dedication {
-o	max-width:430px;
-o	margin:28px 0;
-o	color:var(--lavender);
-o	font-size:15px;
-•	}
-•	.btn {
-o	display:inline-block;
-o	background:var(--teal);
-o	color:var(--purple);
-o	padding:15px 24px;
-o	border-radius:40px;
-o	text-decoration:none;
-o	font-weight:900;
-o	font-size:14px;
-•	}
-•	.btn-dark {
-o	background:var(--purple);
-o	color:white;
-•	}
-•	.intro {padding:65px 0 40px}
-•	.intro h2 {
-o	font-size:clamp(32px,8vw,46px);
-o	line-height:1.1;
-o	letter-spacing:-2px;
-o	margin:15px 0;
-•	}
-•	.intro p {color:var(--muted)}
-•	.section-card {
-o	border-radius:20px;
-o	padding:27px;
-o	margin:16px 0;
-•	}
-•	.section-card h2 {
-o	margin:10px 0;
-o	font-size:29px;
-o	letter-spacing:-1px;
-o	line-height:1.1;
-•	}
-•	.section-card p {font-size:14px;max-width:440px}
-•	.section-card .number {
-o	font-size:11px;
-o	font-weight:800;
-o	letter-spacing:1px;
-•	}
-•	.card-one {background:#d8f4ef}
-•	.card-two {background:#e9def7}
-•	.card-three {background:#f9d8d5}
-•	.card-four {background:#dce5fb}
-•	.note-link {
-o	display:block;
-o	background:rgba(255,255,255,.7);
-o	padding:15px 18px;
-o	border-radius:12px;
-o	text-decoration:none;
-o	margin-top:20px;
-o	font-weight:bold;
-•	}
-•	.coming {opacity:.55;font-size:13px;margin-top:20px}
-•	.reading-area {padding:70px 0 80px}
-•	.reading-label {
-o	color:var(--deep-teal);
-o	font-size:12px;
-o	font-weight:900;
-o	letter-spacing:2px;
-•	}
-•	.reading-area h2 {
-o	font-size:clamp(40px,10vw,64px);
-o	line-height:1;
-o	letter-spacing:-3px;
-o	margin:15px 0;
-•	}
-•	.scripture {
-o	color:var(--muted);
-o	font-size:14px;
-o	margin-bottom:35px;
-•	}
-•	.article-body {
-o	max-width:620px;
-o	font-family:Georgia,serif;
-•	}
-•	.article-body p {
-o	font-size:18px;
-o	line-height:1.85;
-o	margin:0 0 23px;
-•	}
-•	.article-body h3 {
-o	font-family:Arial,sans-serif;
-o	font-size:25px;
-o	letter-spacing:-1px;
-o	margin:45px 0 20px;
-•	}
-•	.article-body strong {color:var(--plum)}
-•	.reflection {
-o	margin-top:45px;
-o	background:var(--lavender);
-o	padding:26px;
-o	border-radius:18px;
-•	}
-•	.reflection h3 {
-o	font-size:15px;
-o	text-transform:uppercase;
-o	letter-spacing:1px;
-o	margin:25px 0 8px;
-o	color:var(--purple);
-•	}
-•	.reflection h3:first-child {margin-top:0}
-•	.reflection p {font-size:16px;line-height:1.7}
-•	footer {
-o	background:var(--purple);
-o	color:var(--lavender);
-o	padding:40px 0;
-o	font-size:12px;
-•	}
-•	footer strong {color:var(--teal)}
-•	@media(max-width:480px) {
-o	.hero-inner {padding-top:40px}
-o	h1 {letter-spacing:-4px}
-o	.article-body p {font-size:17px}
-o	.section-card {padding:23px}
-•	}
-•	</style>
-•	</head>
-•	<body>
-<header class="site-header">
-<nav class="wrap">
-<a class="logo" href="#home">EARTHSIDE.</a>
-<a href="#guide">FIELD GUIDE</a>
-</nav>
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  max-width: 720px;
+  margin: auto;
+  padding: 0 22px;
+}
+
+header {
+  background: var(--purple);
+  color: white;
+  padding: 18px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.hero {
+  background: var(--purple);
+  color: white;
+  padding: 65px 0 80px;
+}
+
+.eyebrow {
+  color: var(--teal);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(62px, 15vw, 110px);
+  line-height: 0.9;
+  letter-spacing: -4px;
+  margin: 25px 0;
+}
+
+.hero p {
+  max-width: 420px;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: var(--lavender);
+}
+
+.moon {
+  width: 105px;
+  height: 105px;
+  background: var(--teal);
+  border-radius: 50%;
+  position: relative;
+  margin: 35px 0;
+  transform: rotate(-15deg);
+}
+
+.moon::before {
+  content: "";
+  position: absolute;
+  width: 95px;
+  height: 95px;
+  background: var(--purple);
+  border-radius: 50%;
+  top: -17px;
+  left: 38px;
+}
+
+.moon::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: var(--coral);
+  border-radius: 50%;
+  bottom: 16px;
+  left: 18px;
+}
+
+.button {
+  display: inline-block;
+  background: var(--teal);
+  color: var(--purple);
+  padding: 14px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.intro {
+  padding: 65px 0 35px;
+}
+
+.intro h2 {
+  font-size: 38px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.card {
+  padding: 25px;
+  border-radius: 18px;
+  margin-bottom: 18px;
+}
+
+.card h2 {
+  font-size: 28px;
+  margin: 10px 0;
+  line-height: 1.2;
+}
+
+.card p {
+  font-size: 14px;
+}
+
+.card-one {
+  background: #d8f4ef;
+}
+
+.card-two {
+  background: #e9def7;
+}
+
+.card-three {
+  background: #f9d8d5;
+}
+
+.card-four {
+  background: #dce5fb;
+}
+
+.card-number {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.note-link {
+  display: block;
+  background: rgba(255,255,255,0.75);
+  padding: 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.coming {
+  opacity: 0.6;
+  font-size: 13px;
+  margin-top: 18px;
+}
+
+.devotion {
+  padding: 75px 0;
+}
+
+.devotion h2 {
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.scripture {
+  color: #716964;
+  font-size: 14px;
+  margin-bottom: 35px;
+}
+
+.article {
+  font-family: Georgia, serif;
+}
+
+.article p {
+  font-size: 18px;
+  line-height: 1.85;
+  margin-bottom: 22px;
+}
+
+.article h3 {
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  margin-top: 45px;
+}
+
+.reflection {
+  background: var(--lavender);
+  padding: 25px;
+  border-radius: 16px;
+  margin-top: 40px;
+}
+
+.reflection h3 {
+  color: var(--purple);
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+footer {
+  background: var(--purple);
+  color: var(--lavender);
+  padding: 35px 0;
+  font-size: 13px;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    letter-spacing: -3px;
+  }
+
+  .devotion h2 {
+    font-size: 40px;
+  }
+
+  .article p {
+    font-size: 17px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav class="container">
+    <a href="#home" class="logo">EARTHSIDE.</a>
+    <a href="#guide">FIELD GUIDE</a>
+  </nav>
 </header>
+
 <section class="hero" id="home">
-<div class="wrap hero-inner">
-<div class="eyebrow">Temporary Residents Club</div>
-<h1>EARTH<br>SIDE.</h1>
-<div class="moon-wrap" aria-hidden="true">
-<div class="moon"></div>
-<div class="stars">✦</div>
-</div>
-<p class="hero-subtitle">
-Field notes on faith, fatherhood,
-and life on Earth.
-</p>
-<div class="hero-dedication">
-<p>To the dads who are still figuring
-out how to live here.</p>
-<p>May we become more like Jesus
-along the way.</p>
-</div>
-<a class="btn" href="#note001">
-START READING ↗
-</a>
-</div>
+  <div class="container">
+
+    <div class="eyebrow">
+      Temporary Residents Club
+    </div>
+
+    <h1>EARTH<br>SIDE.</h1>
+
+    <div class="moon" aria-hidden="true"></div>
+
+    <p class="subtitle">
+      Field notes on faith, fatherhood,
+      and life on Earth.
+    </p>
+
+    <p>
+      To the dads who are still figuring
+      out how to live here.
+    </p>
+
+    <p>
+      May we become more like Jesus
+      along the way.
+    </p>
+
+    <a href="#note001" class="button">
+      START READING
+    </a>
+
+  </div>
 </section>
-<main class="wrap">
+
+<main class="container">
+
 <section class="intro" id="guide">
-<div class="eyebrow" style="color:var(--deep-teal)">
-The Field Guide
-</div>
-<h2>30 field notes.<br>One strange planet.</h2>
-<p>
-We're not from around here.
-But while we're here, there's
-some good work to do.
-</p>
+  <div class="eyebrow" style="color:#087c83">
+    The Field Guide
+  </div>
+
+  <h2>30 field notes.<br>One strange planet.</h2>
+
+  <p>
+    We're not from around here.
+    But while we're here, there's
+    some good work to do.
+  </p>
 </section>
-<section class="section-card card-one">
-<div class="number">SECTION 01 / 001–007</div>
-<h2>Strange Planet</h2>
-<p>Wonder, presence, curiosity, gratitude,
-and learning to pay attention.</p>
-<a class="note-link" href="#note001">
-001 &nbsp; You Are Here ↗
-</a>
-<div class="coming">002–007 · Coming soon</div>
+
+<section class="card card-one">
+  <div class="card-number">
+    SECTION 01 / 001–007
+  </div>
+
+  <h2>Strange Planet</h2>
+
+  <p>
+    Wonder, presence, curiosity,
+    gratitude, and learning to pay attention.
+  </p>
+
+  <a href="#note001" class="note-link">
+    001 — You Are Here
+  </a>
+
+  <div class="coming">
+    002–007 · Coming soon
+  </div>
 </section>
-<section class="section-card card-two">
-<div class="number">SECTION 02 / 008–015</div>
-<h2>The Other Earthlings</h2>
-<p>Marriage, children, friendship,
-hospitality, and learning to love people.</p>
-<div class="coming">008–015 · Coming soon</div>
+
+<section class="card card-two">
+  <div class="card-number">
+    SECTION 02 / 008–015
+  </div>
+
+  <h2>The Other Earthlings</h2>
+
+  <p>
+    Marriage, children, friendship,
+    hospitality, and learning to love people.
+  </p>
+
+  <div class="coming">
+    008–015 · Coming soon
+  </div>
 </section>
-<section class="section-card card-three">
-<div class="number">SECTION 03 / 016–023</div>
-<h2>Equipment Malfunctions</h2>
-<p>Pride, patience, humility, forgiveness,
-and the uncomfortable work of growing.</p>
-<div class="coming">016–023 · Coming soon</div>
+
+<section class="card card-three">
+  <div class="card-number">
+    SECTION 03 / 016–023
+  </div>
+
+  <h2>Equipment Malfunctions</h2>
+
+  <p>
+    Pride, patience, humility, forgiveness,
+    and the uncomfortable work of growing.
+  </p>
+
+  <div class="coming">
+    016–023 · Coming soon
+  </div>
 </section>
-<section class="section-card card-four">
-<div class="number">SECTION 04 / 024–030</div>
-<h2>Temporary Residents</h2>
-<p>Purpose, suffering, contentment,
-heavenly citizenship, and eternity.</p>
-<div class="coming">024–030 · Coming soon</div>
+
+<section class="card card-four">
+  <div class="card-number">
+    SECTION 04 / 024–030
+  </div>
+
+  <h2>Temporary Residents</h2>
+
+  <p>
+    Purpose, suffering, contentment,
+    heavenly citizenship, and eternity.
+  </p>
+
+  <div class="coming">
+    024–030 · Coming soon
+  </div>
 </section>
-<article class="reading-area" id="note001">
-<div class="reading-label">FIELD NOTE 001 / PRESENCE</div>
-<h2>You Are Here.</h2>
-<div class="scripture">
-Matthew 6:34 · Ephesians 5:15–16
-</div>
-<div class="article-body">
-<p>I've spent a surprising amount of my life
-somewhere other than where I actually am.</p>
-<p>At work, I'm thinking about home.</p>
-<p>At home, I'm thinking about work.</p>
-<p>On vacation, I'm thinking about the emails
-waiting for me when I get back.</p>
-<p>And occasionally, while someone is talking
-directly to my face, I'm thinking about what
-I'm going to eat later.</p>
-<p>It's remarkable how many places a person
-can visit without moving his feet.</p>
-<p>Fatherhood has made this particularly obvious.</p>
-<p>You can be sitting on the floor with your
-child while mentally answering an email,
-replaying a conversation, or calculating
-how many hours remain before bedtime.</p>
-<p>Your body is there.</p>
-<p>The rest of you has wandered off.</p>
-<p>And children seem particularly uninterested
-in receiving only a portion of a person.</p>
-<p>They want you to look at the rock.</p>
-<p>Not glance at it.</p>
-<p><strong>Look at it.</strong></p>
-<p>They want you to hear the noise they can
-make with their mouth. They want you to watch
-them do something they've already done
-seventeen times.</p>
-<p>And somewhere in the middle of these
-interruptions, I've started wondering whether
-they're actually interruptions at all.</p>
-<h3>The Trouble with Tomorrow</h3>
-<p>Jesus said not to worry about tomorrow
-because tomorrow will worry about itself.</p>
-<p>I've always found that a peculiar instruction.</p>
-<p>Tomorrow seems like exactly the sort of
-thing I should be worrying about.</p>
-<p>There are bills to pay, responsibilities
-to manage, children to raise, and a lawn
-that apparently has no intention of stopping.</p>
-<p>But Jesus wasn't telling us to abandon
-responsibility.</p>
-<p>He was teaching us to trust our Father.</p>
-<p>Worry has a way of convincing us that
-mentally living in tomorrow is the same
-thing as preparing for it.</p>
-<p>It isn't.</p>
-<p>Sometimes it's simply a way of being
-absent from today.</p>
-<p>Paul David Tripp frequently writes about
-how our circumstances reveal what rules
-our hearts. I think fatherhood gives us
-an unusually clear view.</p>
-<p>When I can't put my phone down,
-what am I afraid of missing?</p>
-<p>When I'm irritated by an interruption,
-what did I believe was more important?</p>
-<p>When I can't enjoy an ordinary afternoon,
-what am I waiting for before I allow
-myself to be content?</p>
-<p>These aren't always comfortable questions.</p>
-<p>But they're useful ones.</p>
-<h3>A Very Short Assignment</h3>
-<p>We're only here for a little while.</p>
-<p>And while we're here, God has given us
-actual people to love.</p>
-<p>Not imaginary people who exist
-in our future plans.</p>
-<p>The ones currently standing in the
-kitchen asking for a snack.</p>
-<p>The ones who want to tell us a story
-that takes an unreasonable amount of time
-to reach its conclusion.</p>
-<p>The ones who would rather have ten minutes
-of our undivided attention than an hour
-of us being vaguely nearby.</p>
-<p>Being present isn't simply a parenting
-technique.</p>
-<p>It's part of learning to love our neighbors.</p>
-<p>And some of our nearest neighbors
-sleep down the hall.</p>
-<p>Perhaps becoming more like Jesus begins,
-in part, with learning to pay attention
-to the people He's placed directly
-in front of us.</p>
-<p>We are here.</p>
-<p>For now.</p>
-<p>And that's a pretty good place to start.</p>
-</div>
-<div class="reflection">
-<h3>Field Question</h3>
-<p>Where does your mind tend to wander
-when you're with the people you love?</p>
-<h3>Earthside Practice</h3>
-<p>Spend fifteen minutes with your child
-today without your phone, an agenda,
-or the need to accomplish anything.</p>
-<p>Let them decide what matters.
-If it's a rock, investigate the rock.</p>
-<h3>A Prayer</h3>
-<p>Father, forgive me for being absent
-from the life You've given me.
-Teach me to trust You with tomorrow
-and to love the people You've placed
-in front of me today.
-Help me become a man who is truly here.
-Amen.</p>
-</div>
-<p style="margin-top:35px">
-<a class="btn btn-dark" href="#guide">
-BACK TO FIELD GUIDE ↑
-</a>
-</p>
+
+<article class="devotion" id="note001">
+
+  <div class="eyebrow" style="color:#087c83">
+    Field Note 001 / Presence
+  </div>
+
+  <h2>You Are Here.</h2>
+
+  <div class="scripture">
+    Matthew 6:34 · Ephesians 5:15–16
+  </div>
+
+  <div class="article">
+
+    <p>I've spent a surprising amount of my life somewhere other than where I actually am.</p>
+
+    <p>At work, I'm thinking about home.</p>
+
+    <p>At home, I'm thinking about work.</p>
+
+    <p>On vacation, I'm thinking about the emails waiting for me when I get back.</p>
+
+    <p>And occasionally, while someone is talking directly to my face, I'm thinking about what I'm going to eat later.</p>
+
+    <p>It's remarkable how many places a person can visit without moving his feet.</p>
+
+    <p>Fatherhood has made this particularly obvious.</p>
+
+    <p>You can be sitting on the floor with your child while mentally answering an email, replaying a conversation, or calculating how many hours remain before bedtime.</p>
+
+    <p>Your body is there.</p>
+
+    <p>The rest of you has wandered off.</p>
+
+    <p>And children seem particularly uninterested in receiving only a portion of a person.</p>
+
+    <p>They want you to look at the rock.</p>
+
+    <p>Not glance at it.</p>
+
+    <p><strong>Look at it.</strong></p>
+
+    <p>They want you to hear the noise they can make with their mouth. They want you to watch them do something they've already done seventeen times.</p>
+
+    <p>And somewhere in the middle of these interruptions, I've started wondering whether they're actually interruptions at all.</p>
+
+    <h3>The Trouble with Tomorrow</h3>
+
+    <p>Jesus said not to worry about tomorrow because tomorrow will worry about itself.</p>
+
+    <p>I've always found that a peculiar instruction.</p>
+
+    <p>Tomorrow seems like exactly the sort of thing I should be worrying about.</p>
+
+    <p>There are bills to pay, responsibilities to manage, children to raise, and a lawn that apparently has no intention of stopping.</p>
+
+    <p>But Jesus wasn't telling us to abandon responsibility.</p>
+
+    <p>He was teaching us to trust our Father.</p>
+
+    <p>Worry has a way of convincing us that mentally living in tomorrow is the same thing as preparing for it.</p>
+
+    <p>It isn't.</p>
+
+    <p>Sometimes it's simply a way of being absent from today.</p>
+
+    <p>Paul David Tripp frequently writes about how our circumstances reveal what rules our hearts. I think fatherhood gives us an unusually clear view.</p>
+
+    <p>When I can't put my phone down, what am I afraid of missing?</p>
+
+    <p>When I'm irritated by an interruption, what did I believe was more important?</p>
+
+    <p>When I can't enjoy an ordinary afternoon, what am I waiting for before I allow myself to be content?</p>
+
+    <p>These aren't always comfortable questions.</p>
+
+    <p>But they're useful ones.</p>
+
+    <h3>A Very Short Assignment</h3>
+
+    <p>We're only here for a little while.</p>
+
+    <p>And while we're here, God has given us actual people to love.</p>
+
+    <p>Not imaginary people who exist in our future plans.</p>
+
+    <p>The ones currently standing in the kitchen asking for a snack.</p>
+
+    <p>The ones who want to tell us a story that takes an unreasonable amount of time to reach its conclusion.</p>
+
+    <p>The ones who would rather have ten minutes of our undivided attention than an hour of us being vaguely nearby.</p>
+
+    <p>Being present isn't simply a parenting technique.</p>
+
+    <p>It's part of learning to love our neighbors.</p>
+
+    <p>And some of our nearest neighbors sleep down the hall.</p>
+
+    <p>Perhaps becoming more like Jesus begins, in part, with learning to pay attention to the people He's placed directly in front of us.</p>
+
+    <p>We are here.</p>
+
+    <p>For now.</p>
+
+    <p>And that's a pretty good place to start.</p>
+
+  </div>
+
+  <div class="reflection">
+
+    <h3>Field Question</h3>
+
+    <p>Where does your mind tend to wander when you're with the people you love?</p>
+
+    <h3>Earthside Practice</h3>
+
+    <p>Spend fifteen minutes with your child today without your phone, an agenda, or the need to accomplish anything.</p>
+
+    <p>Let them decide what matters. If it's a rock, investigate the rock.</p>
+
+    <h3>A Prayer</h3>
+
+    <p>Father, forgive me for being absent from the life You've given me. Teach me to trust You with tomorrow and to love the people You've placed in front of me today. Help me become a man who is truly here. Amen.</p>
+
+  </div>
+
+  <a href="#guide" class="button">
+    BACK TO FIELD GUIDE
+  </a>
+
 </article>
+
 </main>
+
 <footer>
-<div class="wrap">
-<strong>EARTHSIDE.</strong>
-<p>Field Notes on Faith, Fatherhood,
-and Life on Earth.</p>
-<p>We're not from around here.</p>
-</div>
+  <div class="container">
+    <strong>EARTHSIDE.</strong>
+    <p>Field Notes on Faith, Fatherhood, and Life on Earth.</p>
+    <p>We're not from around here.</p>
+  </div>
 </footer>
+
 </body>
 </html>
-
-
